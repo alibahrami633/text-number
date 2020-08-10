@@ -1,0 +1,21 @@
+{
+  "name": "text-number",
+  "version": "1.0.0",
+  "description": "This tiny library contains classes which can be used to convert numbers into English/Farsi/Persian and Arabic languages. Other languages can be added easily by sub-classing TextNumber class.",
+  "main": "index.cjs.js",
+  "module": "index.esm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alibahrami633/text-number.git"
+  },
+  "keywords": [ "javascript", "number", "text" ],
+  "author": "Ali Bahrami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alibahrami633/text-number/issues"
+  },
+  "homepage": "https://github.com/alibahrami633/text-number#readme"
+}
