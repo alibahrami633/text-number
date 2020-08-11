@@ -8,7 +8,7 @@ npm i text-number
 
 ## example
 ```javascript
-import { TextNumber } from 'text-number'
+import { TextNumber, TextNumberFa, TextNumberAr } from 'text-number'
 
 const englishTextNumber = new TextNumber();
 const farsiTextNumber = new TextNumberFa();
