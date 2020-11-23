@@ -77,7 +77,7 @@ var TextNumber = /*#__PURE__*/function () {
     key: "text",
     value: function text(n) {
       n = n || this.value;
-      var result = "";
+      var result = [];
       var i = 0;
       var str = n.toString();
 
@@ -94,25 +94,18 @@ var TextNumber = /*#__PURE__*/function () {
           }
 
           var num = str.substr(from, len);
-          result = this._text3(parseInt(num)) + " " + this.units[i] + (i < str.length && result.length ? this.and + result : "");
+
+          var t3 = this._text3(parseInt(num));
+
+          if (t3) {
+            result.push(t3 + " " + this.units[i]);
+          }
+
           i++;
         } while (i * 3 < str.length);
       }
 
-      result = result.trim().replace(/\s+/g, ' ');
-
-      if (result.endsWith(this.and.trim())) {
-        result = result.substr(0, result.length - this.and.trim().length);
-      }
-
-      if (result.endsWith(this.and2.trim())) {
-        result = result.substr(0, result.length - this.and2.trim().length);
-      }
-
-      if (result.endsWith(this.and3.trim())) {
-        result = result.substr(0, result.length - this.and3.trim().length);
-      }
-
+      result = result.reverse().join(this.and).trim().replace(/\s+/g, ' ');
       return result;
     }
   }]);
