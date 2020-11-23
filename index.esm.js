@@ -70,7 +70,19 @@ class TextNumber {
 			} while (i * 3 < str.length)
 		}
 	
-		return result.trim().replace(/\s+/g, ' ');
+		result = result.trim().replace(/\s+/g, ' ');
+		
+		if (result.endsWith(this.and.trim())) {
+		    result = result.substr(0, result.length - this.and.trim().length);
+	    	}
+		if (result.endsWith(this.and2.trim())) {
+		    result = result.substr(0, result.length - this.and2.trim().length);
+	    	}
+		if (result.endsWith(this.and3.trim())) {
+		    result = result.substr(0, result.length - this.and3.trim().length);
+	    	}
+			
+		return result;
 	}
 }
 
