@@ -17,7 +17,7 @@ class TextNumber {
 	_text2(n) {
 		let result = "";
 
-		n = n || this.value;
+		n = n || this.value || '0';
 
 		if (n < 10) {
 			result = this.ones[n];
@@ -36,7 +36,7 @@ class TextNumber {
 		return result;
 	}
 	_text3(n) {
-		n = n || this.value;
+		n = n || this.value || '0';
 
 		const one = Math.floor(n / 100);
 		const rest = n - one * 100;
@@ -44,14 +44,14 @@ class TextNumber {
 		return (one > 0 ? this.hundreds[one - 1] : "") + (rest > 0 ? (one > 0 ? this.and3 : "") + this._text2(rest) : "");
 	}
 	text(n) {
-		n = n || this.value;
+		n = n || this.value || '0';
 
 		let result = [];
 		let i = 0;
 		const str = n.toString();
 
 		if (n == 0) {
-			result = this.zero;
+			result = [this.zero];
 		} else {
 			do {
 				let from = str.length - (i + 1) * 3;

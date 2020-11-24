@@ -1,6 +1,6 @@
 {
   "name": "text-number",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This tiny library contains classes which can be used to convert numbers into English/Farsi/Persian and Arabic languages. Other languages can be added easily by sub-classing TextNumber class.",
   "main": "index.cjs.js",
   "module": "index.esm.js",

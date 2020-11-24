@@ -50,7 +50,7 @@ var TextNumber = /*#__PURE__*/function () {
     key: "_text2",
     value: function _text2(n) {
       var result = "";
-      n = n || this.value;
+      n = n || this.value || '0';
 
       if (n < 10) {
         result = this.ones[n];
@@ -68,7 +68,7 @@ var TextNumber = /*#__PURE__*/function () {
   }, {
     key: "_text3",
     value: function _text3(n) {
-      n = n || this.value;
+      n = n || this.value || '0';
       var one = Math.floor(n / 100);
       var rest = n - one * 100;
       return (one > 0 ? this.hundreds[one - 1] : "") + (rest > 0 ? (one > 0 ? this.and3 : "") + this._text2(rest) : "");
@@ -76,13 +76,13 @@ var TextNumber = /*#__PURE__*/function () {
   }, {
     key: "text",
     value: function text(n) {
-      n = n || this.value;
+      n = n || this.value || '0';
       var result = [];
       var i = 0;
       var str = n.toString();
 
       if (n == 0) {
-        result = this.zero;
+        result = [this.zero];
       } else {
         do {
           var from = str.length - (i + 1) * 3;
